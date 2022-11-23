@@ -120,20 +120,25 @@ module.exports = {
     ],
   },
   plugins: [
+    
     new MiniCssExtractPlugin({
-      filename: "assets/css/[name]_[chunkhash].css", // 输出目录与文件
+      // 该插件的主要是为了抽离 css 样式,防止将样式打包在 js 中文件过大和因为文件大网络请求超时的情况。
+      filename: "assets/css/[name]_[chunkhash].css", // 输出目录与文件 
     }),
     new CleanWebpackPlugin({
+      //先把 build或dist (就是放生产环境用的文件) 目录里的文件先清除干净，再生成新的
       verbose: true,
     }),
     new OptimizeCssAssetsPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
+
+    // 自动加载模块，而不必到处 import 或 require 。(开发环境和生产环境各自的需要)
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
-    ...getHtmlPlugins()
+    ...getHtmlPlugins() //解析所有HTML文件
   ],
   // 提取公共模块，包括第三方库和自定义工具库等
   optimization: {
