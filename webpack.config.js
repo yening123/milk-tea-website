@@ -19,7 +19,7 @@ const getEntry = () => {
   });
   
   return entry;
-} 
+}  
 
 const getHtmlPlugins = () => {
   const reg = /(?<=src\\page\\).*?(?=\\\w*\.html)/;
