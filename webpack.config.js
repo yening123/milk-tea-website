@@ -20,7 +20,7 @@ const getEntry = () => {
   
   return entry;
 }
-
+//666
 const getHtmlPlugins = () => {
   const reg = /(?<=src\\page\\).*?(?=\\\w*\.html)/;
   const paths = glob.sync("./src/page/**/*.html");
