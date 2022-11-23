@@ -23,6 +23,7 @@ const getEntry = () => {
 //666
 //777
 //888
+//999
 const getHtmlPlugins = () => {
   const reg = /(?<=src\\page\\).*?(?=\\\w*\.html)/;
   const paths = glob.sync("./src/page/**/*.html");
