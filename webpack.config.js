@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 提取css到单独文件的插件
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //压缩css插件
 
+//1修改
 const getEntry = () => {
   const entry = {}; 
   const reg = /(?<=src\\page\\).*?(?=\\\w*\.js)/;
